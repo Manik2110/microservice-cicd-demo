@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: ["main"]
 
-env:
-  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/image-filter-service
-
 jobs:
   test:
     name: Run Tests
@@ -47,5 +44,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.IMAGE_NAME }}:latest
-            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/image-filter-service:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/image-filter-service:${{ github.sha }}
