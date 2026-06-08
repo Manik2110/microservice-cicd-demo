@@ -44,5 +44,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/image-filter-service:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/image-filter-service
             ${{ secrets.DOCKERHUB_USERNAME }}/image-filter-service:${{ github.sha }}
